@@ -372,6 +372,7 @@ code {
 .preview-iframe { 
     border:0; width:100%; min-height:600px;
     position: relative; // set position for resize rendering issue
+    box-shadow: 0px 0px 10px 0px #aaa;
 }
 
 .autoshow-toggle {
@@ -379,6 +380,7 @@ code {
   cursor: pointer;
   color: white;
   padding-top: 3px;
+}
 
 .email-item.current {
   background: #e9912e;
