@@ -379,5 +379,9 @@ code {
   cursor: pointer;
   color: white;
   padding-top: 3px;
+
+.email-item.current {
+  background: #e9912e;
+  color: white;
 }
 

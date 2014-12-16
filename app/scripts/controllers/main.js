@@ -5,12 +5,12 @@
  */
 
 app.controller('MainCtrl', [
-  '$scope', '$rootScope', '$http', 'Email', '$location',
-  function($scope, $rootScope, $http, Email, $location) {
+  '$scope', '$rootScope', '$http', 'Email', '$location', '$route',
+  function($scope, $rootScope, $http, Email, $location, $route) {
 
     $scope.items = [];
     $scope.configOpen = false;
-    $scope.autoShow = false;
+    $scope.currentItemId = null;
 
     // Load all emails
     var loadData = function() {
@@ -19,6 +19,12 @@ app.controller('MainCtrl', [
 
     $rootScope.$on('Refresh', function(e, d) {
       loadData();
+    });
+
+    $rootScope.$on('$routeChangeSuccess', function( e, route ) {
+      if ( route.params ) {
+        $scope.currentItemId = route.params.itemId;
+      }
     });
 
     var refreshTimeout = null;
